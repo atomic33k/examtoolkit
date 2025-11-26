@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A-Level Study Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="brand">A-Level Study Hub</h1>
+      <nav>
+        <button class="nav-btn" data-page="home">Home</button>
+        <button class="nav-btn" data-page="subjects">Subjects</button>
+        <button class="nav-btn" data-page="progress">Progress</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="app">
+    <!-- Home -->
+    <section id="page-home" class="page">
+      <h2>Welcome</h2>
+      <p>Focused revision for A-Level Maths (OCR), Computer Science (OCR), and Economics (Edexcel Course B). Create custom MCQ quizzes, build flashcards, and track progress. Everything stored locally in your browser.</p>
+      <div class="quick-links">
+        <button class="big" data-page="subjects">Go to Subjects</button>
+        <button class="big" data-page="progress">View Progress</button>
+      </div>
+    </section>
+
+    <!-- Subjects -->
+    <section id="page-subjects" class="page hidden">
+      <h2>Subjects</h2>
+      <div id="subjects-list" class="cards"></div>
+    </section>
+
+    <!-- Subject Viewer -->
+    <section id="page-subject" class="page hidden">
+      <button id="back-to-subjects" class="link">← Back to subjects</button>
+      <h2 id="subject-title"></h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Notes / Quick Summary</h3>
+          <textarea id="notes-input" placeholder="Paste notes or upload text here..."></textarea>
+          <div class="row">
+            <button id="save-notes">Save Notes</button>
+            <button id="auto-summary">Auto summary</button>
+            <button id="download-notes">Download</button>
+          </div>
+          <div id="notes-list"></div>
+        </div>
+
+        <div class="card">
+          <h3>Custom MCQ Quiz (Create)</h3>
+          <input id="quiz-title" placeholder="Quiz title (e.g. Differentiation)" />
+          <textarea id="quiz-questions" placeholder="Add questions lines like: Question? | correct answer | wrong1 ; wrong2 ; wrong3"></textarea>
+          <div class="row">
+            <button id="create-quiz">Create Quiz</button>
+            <button id="start-quiz">Start Quiz</button>
+          </div>
+          <div id="quizzes-list"></div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Flashcards</h3>
+          <input id="card-front" placeholder="Front (question/concept)" />
+          <input id="card-back" placeholder="Back (answer/explanation)" />
+          <div class="row">
+            <button id="add-card">Add Card</button>
+            <button id="study-cards">Study Cards</button>
+          </div>
+          <div id="deck-list"></div>
+        </div>
+
+        <div class="card">
+          <h3>Past Papers / Uploads</h3>
+          <textarea id="pastpaper-text" placeholder="Paste past paper text or notes here..."></textarea>
+          <div class="row">
+            <button id="save-pastpaper">Save</button>
+            <button id="analyze-pastpaper">Analyze (extract topics)</button>
+          </div>
+          <div id="pastpapers-list"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Quiz Player -->
+    <section id="page-quizplayer" class="page hidden">
+      <button class="link" id="back-from-quiz">← Back</button>
+      <h2 id="quizplayer-title">Quiz</h2>
+      <div id="quiz-area" class="card"></div>
+    </section>
+
+    <!-- Flashcard Study -->
+    <section id="page-flashstudy" class="page hidden">
+      <button class="link" id="back-from-flash">← Back</button>
+      <h2 id="flash-title">Flashcard Study</h2>
+      <div id="flash-area" class="card"></div>
+    </section>
+
+    <!-- Progress -->
+    <section id="page-progress" class="page hidden">
+      <h2>Progress Tracker</h2>
+      <div id="progress-list"></div>
+      <p class="muted">Progress is stored in your browser (localStorage). Clearing browser data will remove progress.</p>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <small>Built for A-Level revision • Works offline in this browser • Data stored locally</small>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
